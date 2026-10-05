@@ -39,6 +39,7 @@ function App() {
       const updated = await updateTodo(id, data);
       // TODO: Complete this. Update the `todos` state so the edited todo is
       // replaced with `updated` (keep every other todo as it is).
+      setTodos((prev) => prev.map((t) => (t._id === id ? updated : t)))
     });
 
   const handleDelete = (id) =>
